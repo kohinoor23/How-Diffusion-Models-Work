@@ -37,3 +37,49 @@
 - At each denoising step, **it predicts noise**, and subtracts it to get a better image
 - NOTE: At each denoising step, some random noise is added again to prevent "mode collapse"
 
+## Neural Network
+- **UNet** Architecture
+    - Input and output of same size
+    - First used for image segmentation
+<p align = "center">
+  <img width="458" alt="image" src="https://github.com/atul2602/How-Diffusion-Models-Work/assets/61497490/32801d60-e8ac-494d-97a9-07b04a07ca3f">
+</p> 
+
+- Takes a noisy image, embeds into small space by downsampling, and upsamples to predict noise
+- Can take more info. in form of _embeddings_
+    - Time: related to timestep, and noise level added
+    - Context: guides generation process 
+ 
+- Checkout `forward()` in [sampling notebook](https://github.com/atul2602/How-Diffusion-Models-Work/blob/main/L1_Sampling%20.ipynb)
+    
+<p align = "center">
+  <img width="360" alt="image" src="https://github.com/atul2602/How-Diffusion-Models-Work/assets/61497490/2528e902-49dd-4d87-b480-07c5e447cc0a">
+</p>
+
+## Training
+> Learns the distribution of what is "not noise"
+- Sample training image, timestep `t`, and noise, randomly
+    - Timestep helps control level of noise
+    - randomisation ensures a stable model
+- Add noise to image
+- Input this into NN, which predicts the noise
+- Compute loss between actual and predicted noise
+- Backprop and learn
+<p align = "center">
+<img width="500" alt="image" src="https://github.com/atul2602/How-Diffusion-Models-Work/assets/61497490/d134b4c7-fbc1-4872-b1e0-9c861cf3897a">
+</p>
+
+## Control 
+
+- Embeddings are vectors , for instance, strings represented as number vectors
+- Given as input to NN along with training image
+- Get associated with a training example, and its properties
+- Uses: Generate funky mixtures by combining embeddings
+- Context formats
+    - Text
+    - Categories, one hot encoded (Eg. hero, non-hero, spells ...)   
+<p align = "center">
+  <img width="550" alt="image" src="https://github.com/atul2602/How-Diffusion-Models-Work/assets/61497490/38f21170-1e07-44e0-a03f-576b4250e581">
+</p>
+
+
