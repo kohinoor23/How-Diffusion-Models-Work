@@ -82,4 +82,13 @@
   <img width="550" alt="image" src="https://github.com/atul2602/How-Diffusion-Models-Work/assets/61497490/38f21170-1e07-44e0-a03f-576b4250e581">
 </p>
 
+## Fast Sampling : DDIM
+
+- DDPM is slow!
+    - Multiple timesteps, and markovian nature
+- Skips steps, making the process deterministic
+- Lower quality than DDPM
+
+## Summary
+Other applications : Music, Inpainting, Textual Inversion
 
