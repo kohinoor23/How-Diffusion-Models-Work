@@ -21,11 +21,6 @@ https://github.com/atul2602/How-Diffusion-Models-Work/assets/61497490/9b44015b-2
 
 > Noted by Atul
 
-- Missing Prerequisite: [Backprop](https://www.youtube.com/watch?v=tIeHLnjs5U8)
-<p align = "center">
-<img width="487" alt="image" src="https://github.com/atul2602/How-Diffusion-Models-Work/assets/61497490/a41ae493-ed32-4dd2-9bfd-b2b78ecd76f3">
-</p>
-
 - Example used throughout the course: Generate 16X16 size sprites for video games.
 
 ## Intuition
